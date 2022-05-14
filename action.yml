@@ -1,0 +1,18 @@
+name: 'YC Function deploy'
+description: 'GitHub Action to deploy Serverless Function to Yandex Cloud.'
+author: 'Nikolay Matrosov'
+inputs:
+  yc-sa-json-credentials:
+    required: true
+    description: 'Json containing authorized key for Service Account. More info https://cloud.yandex.ru/docs/container-registry/operations/authentication#sa-json'
+
+outputs:
+  token:
+    description: 'IAM Token.'
+
+branding:
+  color: blue
+  icon: log-in
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
