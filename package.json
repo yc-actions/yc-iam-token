@@ -1,0 +1,49 @@
+{
+  "name": "yc-actions-yc-iam-token",
+  "version": "1.0.0",
+  "description": "GitHub Action issuing Yandex Cloud IAM Token.",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write '**/*.ts'",
+    "format-check": "prettier --check '**/*.ts'",
+    "lint": "eslint src/**/*.ts --fix",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest --passWithNoTests",
+    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yc-actions/yc-iam-token.git"
+  },
+  "keywords": [
+    "actions",
+    "yandex cloud",
+    "login"
+  ],
+  "author": "Nikolay Matrosov",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.8.0",
+    "@actions/github": "^5.0.1",
+    "@yandex-cloud/nodejs-sdk": "2.1.0"
+  },
+  "devDependencies": {
+    "@types/archiver": "^5.3.1",
+    "@types/mustache": "^4.1.2",
+    "@types/node": "17.0.31",
+    "@types/stream-buffers": "^3.0.4",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "@vercel/ncc": "^0.33.4",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.15.0",
+    "eslint-plugin-github": "^4.3.6",
+    "eslint-plugin-jest": "^26.1.5",
+    "jest": "^27.5.1",
+    "js-yaml": "^4.1.0",
+    "prettier": "2.6.2",
+    "ts-jest": "^27.1.4",
+    "typescript": "^4.6.4"
+  }
+}
