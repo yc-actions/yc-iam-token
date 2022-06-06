@@ -26,7 +26,7 @@
   "dependencies": {
     "@actions/core": "^1.8.0",
     "@actions/github": "^5.0.1",
-    "@yandex-cloud/nodejs-sdk": "2.1.0"
+    "@yandex-cloud/nodejs-sdk": "2.1.1"
   },
   "devDependencies": {
     "@types/archiver": "^5.3.1",
