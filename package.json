@@ -1,6 +1,6 @@
 {
   "name": "yc-actions-yc-iam-token",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "GitHub Action issuing Yandex Cloud IAM Token.",
   "main": "lib/main.js",
   "scripts": {
