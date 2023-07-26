@@ -27,6 +27,18 @@ Alternative usage:
 
 
 
+```yaml
+    - name: IAM Token
+      id: issue-iam-token
+      uses: yc-actions/yc-iam-token@v1
+      with:
+        yc-key-id: ${{ secrets.YC_KEY_ID }}
+        yc-service-account-id: ${{ secrets.YC_SERVICE_ACCOUNT_ID }}
+        yc-private-key: ${{ secrets.YC_PRIVATE_KEY }}
+```
+`yc-key-id`, `yc-service-account-id` and `yc-private-key` are `id`, `service_account_id` and `private_key` respectively from Service Account json key.
+
+
 See [action.yml](action.yml) for the full documentation for this action's inputs and outputs.
 
 ## Prerequisites
