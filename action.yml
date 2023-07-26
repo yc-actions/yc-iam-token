@@ -3,8 +3,20 @@ description: 'GitHub Action issuing Yandex Cloud IAM Token.'
 author: 'Nikolay Matrosov'
 inputs:
   yc-sa-json-credentials:
-    required: true
-    description: 'Json containing authorized key for Service Account. More info https://cloud.yandex.ru/docs/container-registry/operations/authentication#sa-json'
+    required: false
+    description: >
+      Json containing authorized key for Service Account. 
+      Either "yc-sa-json-credentials" or all three of "yc-key-id", "yc-service-account-id" and "yc-private-key" is required. 
+      More info https://cloud.yandex.ru/docs/container-registry/operations/authentication#sa-json
+  yc-key-id:
+    required: false
+    description: '"id" field from Service Account json key.'
+  yc-service-account-id:
+    required: false
+    description: '"service_account_id" field from Service Account json key.'
+  yc-private-key:
+    required: false
+    description: '"private_key" field from Service Account json key.'
 
 outputs:
   token:
