@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "@types/node": "20.8.10",
-    "@types/stream-buffers": "^3.0.6",
+    "@types/stream-buffers": "^3.0.7",
     "@typescript-eslint/eslint-plugin": "^6.3.0",
     "@typescript-eslint/parser": "^6.10.0",
     "@vercel/ncc": "^0.38.1",
