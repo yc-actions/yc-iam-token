@@ -26,5 +26,5 @@ branding:
   color: blue
   icon: log-in
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
