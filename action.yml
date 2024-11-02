@@ -17,6 +17,10 @@ inputs:
   yc-private-key:
     required: false
     description: '"private_key" field from Service Account json key.'
+  mask-token:
+    required: false
+    description: 'Mask generated IAM token'
+    default: 'true'
 
 outputs:
   token:
