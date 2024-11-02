@@ -33,7 +33,12 @@ async function run(): Promise<void> {
     const tokenService = new IamTokenService(serviceAccountJson);
 
     const token = await tokenService.getToken();
-    core.setSecret(token);
+
+    const maskToken = core.getInput('mask-token');
+    if (maskToken === 'true') {
+      core.setSecret(token);
+    }
+
     core.setOutput('token', token);
   } catch (error) {
     if (error instanceof Error) {
