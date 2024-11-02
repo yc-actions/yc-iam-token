@@ -1,6 +1,6 @@
 {
   "name": "yc-actions-yc-iam-token",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "GitHub Action issuing Yandex Cloud IAM Token.",
   "main": "lib/main.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "@yandex-cloud/nodejs-sdk": "2.7.7"
   },
   "devDependencies": {
-    "@types/node": "22.8.1",
+    "@types/node": "22.8.6",
     "@types/stream-buffers": "^3.0.7",
     "@typescript-eslint/eslint-plugin": "^7.17.0",
     "@typescript-eslint/parser": "^7.18.0",
@@ -38,11 +38,11 @@
     "dotenv": "^16.4.5",
     "eslint": "^8.57.1",
     "eslint-plugin-github": "^5.0.2",
-    "eslint-plugin-prettier": "5.2.1",
     "eslint-plugin-jest": "^28.8.3",
+    "eslint-plugin-prettier": "5.2.1",
     "jest": "^29.7.0",
     "js-yaml": "^4.1.0",
-    "prettier": "3.3.2",
+    "prettier": "3.3.3",
     "ts-jest": "^29.2.5",
     "typescript": "^5.6.3"
   },
