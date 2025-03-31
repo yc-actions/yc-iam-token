@@ -1,22 +1,22 @@
-import * as core from '@actions/core';
+import {getInput, setSecret, info, setOutput, setFailed} from '@actions/core';
 import {fromServiceAccountJsonFile} from './service-account-json';
 import {IIAmCredentials} from '@yandex-cloud/nodejs-sdk/dist/types';
 import {IamTokenService} from '@yandex-cloud/nodejs-sdk/dist/token-service/iam-token-service';
 
 function getServiceAccountJson(): IIAmCredentials {
-  const ycSaJsonCredentials = core.getInput('yc-sa-json-credentials');
+  const ycSaJsonCredentials = getInput('yc-sa-json-credentials');
   if (ycSaJsonCredentials.length !== 0) {
-    core.setSecret(ycSaJsonCredentials);
+    setSecret(ycSaJsonCredentials);
     return fromServiceAccountJsonFile(JSON.parse(ycSaJsonCredentials));
   }
 
-  const ycKeyId = core.getInput('yc-key-id', {required: true});
-  const ycServiceAccountId = core.getInput('yc-service-account-id', {required: true});
-  const ycPrivateKey = core.getInput('yc-private-key', {required: true});
+  const ycKeyId = getInput('yc-key-id', {required: true});
+  const ycServiceAccountId = getInput('yc-service-account-id', {required: true});
+  const ycPrivateKey = getInput('yc-private-key', {required: true});
 
-  core.setSecret(ycServiceAccountId);
-  core.setSecret(ycKeyId);
-  core.setSecret(ycPrivateKey);
+  setSecret(ycServiceAccountId);
+  setSecret(ycKeyId);
+  setSecret(ycPrivateKey);
 
   return {
     accessKeyId: ycKeyId,
@@ -29,20 +29,20 @@ async function run(): Promise<void> {
   try {
     const serviceAccountJson = getServiceAccountJson();
 
-    core.info('Function inputs set');
+    info('Function inputs set');
     const tokenService = new IamTokenService(serviceAccountJson);
 
     const token = await tokenService.getToken();
 
-    const maskToken = core.getInput('mask-token');
+    const maskToken = getInput('mask-token');
     if (maskToken === 'true') {
-      core.setSecret(token);
+      setSecret(token);
     }
 
-    core.setOutput('token', token);
+    setOutput('token', token);
   } catch (error) {
     if (error instanceof Error) {
-      core.setFailed(error.message);
+      setFailed(error.message);
     }
   }
 }
