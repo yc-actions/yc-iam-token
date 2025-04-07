@@ -33,7 +33,7 @@
     "@types/node": "22.13.14",
     "@types/stream-buffers": "^3.0.7",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
-    "@typescript-eslint/parser": "^8.28.0",
+    "@typescript-eslint/parser": "^8.29.0",
     "@vercel/ncc": "^0.38.3",
     "dotenv": "^16.4.7",
     "eslint": "^9.23.0",
