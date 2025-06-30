@@ -30,7 +30,7 @@
     "@yandex-cloud/nodejs-sdk": "2.9.0"
   },
   "devDependencies": {
-    "@types/node": "24.0.3",
+    "@types/node": "24.0.7",
     "@types/stream-buffers": "^3.0.7",
     "@typescript-eslint/eslint-plugin": "^8.34.1",
     "@typescript-eslint/parser": "^8.34.1",
